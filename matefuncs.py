@@ -51,3 +51,34 @@ def fiblim(m, enlist=False):
         return l
     else:
         return b-a
+
+
+def getFactors(x):
+    """
+    This function takes a number and returns its factors in a list
+    """
+    a = []
+    for i in xrange(1, x + 1):
+        if x % i == 0:
+            a.append(i)
+    return a
+
+
+def is_prime(x):
+    import numpy as np
+    prime = False
+    if x > 1:
+        prime = True
+        k = 2
+        n = np.sqrt(x) # to find square of x only once (or n = x ** 0.5 to get rid of math module)
+        while k <= n and prime == True:
+            if x % k == 0:
+                prime = False
+            k += 1
+    return prime
+
+# num = 23 # try num = 1011013, num = 10110133, num = 101101331
+# if is_prime(num):
+#     print str(num) + " is a prime number"
+# else:
+#     print str(num) + " is a composite number"
