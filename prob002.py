@@ -10,21 +10,28 @@ previous two terms. By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not
 exceed four million, find the sum of the even-valued terms.
 
+History:
+    12.01.2015. First implementation.
+    28.01.2015. Removed use of matefuncs script.
+
 @author: Mario Garcia
 """
 
 import numpy as np
-import matefuncs as mf
 
-# Get a list of all Fibonacci numbers up to n = 4 000 000
+# Get a list of all Fibonacci numbers not exceeding 4 000 000
 n = 4000000
-a = mf.fiblim(n,enlist=True)
 
-# Select and sum the even numbers of the list
-s = 0
-for i in range(len(a)):
-	if int(np.mod(a[i],2)) is 0:
-		s += a[i]
+# Initial values
+a, b, s = 1, 1, 0
+#Start Looping (Limited to 1000 Fibonacci values)
+for i in range(1000):
+    if b < n:
+        a, b = b, a + b
+        if int(np.mod(a,2)) is 0:
+            s += a
+    else:
+        break
 
 # Print the sum
 print s
