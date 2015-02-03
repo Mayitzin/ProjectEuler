@@ -8,15 +8,13 @@
     @author: Mario Garcia
 */
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 // Sum multiples of 3 and 5 up to a value equal to 'a'
 int sumevens(int a)
 {
-    int n, s=0;
-    for (int n=0; n<a; n++){
+    int n = 0, s = 0;
+    for(n; n<a; n++){
         if ( n%3==0 || n%5==0 ){
             s += n;
         }
@@ -27,10 +25,9 @@ int sumevens(int a)
 // ============= MAIN PROGRAM =============
 int main()
 {
-    int a,r;            // Define integers
-    cin >> a;           // Take value from user
+    int a = 1000, r;    // Define integers
     r = sumevens(a);    // Sum even numbers
-    cout << r << endl;  // Display on command Window
+    printf("%d\n", r);  // Display on command Window
 
     return 0;
 }

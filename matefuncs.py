@@ -76,9 +76,3 @@ def is_prime(x):
                 prime = False
             k += 1
     return prime
-
-# num = 23 # try num = 1011013, num = 10110133, num = 101101331
-# if is_prime(num):
-#     print str(num) + " is a prime number"
-# else:
-#     print str(num) + " is a composite number"

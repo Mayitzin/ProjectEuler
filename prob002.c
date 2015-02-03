@@ -11,19 +11,18 @@
     @author: Mario Garcia
 */
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 // Sum even numbers up to a value equal to 'n'
-int sumevens(int n){
-    int a = 0, b = 1, c = 0, s = 0;
+int sumevens(int n)
+{
+    int a = 0, b = 1, c = 0, s = 0, i = 1;
 
-    for (int i = 1 ; i<=1000 ; i++ ){
+    for (i; i<=1000 ; i++ ){
+        c = a + b;
+        a = b;
+        b = c;
         if (c<n){
-            c = a + b;
-            a = b;
-            b = c;
             if (c%2==0){
                 s += c;
             }
@@ -36,10 +35,12 @@ int sumevens(int n){
 }
 
 // ============= MAIN PROGRAM =============
-int main() {
+int main()
+{
     int n = 4000000,r;  // Define variables
     r = sumevens(n);    // Sum even Fibonacci numbers
-    cout << r << endl;  // Display on command Window
+
+    printf("%d\n",r);  // Display on command Window
 
     return 0;
 }
